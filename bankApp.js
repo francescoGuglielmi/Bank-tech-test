@@ -8,7 +8,10 @@ const account = {
 };
 
 function withdraw(amount) {
- 
+  dataValidate(amount);
+  withdrawValidate(amount);
+  account.currentBalance -= amount;
+  return `Withdrawn £${amount}, current balance: £${account.currentBalance}`
 };
 
 function deposit(amount) {
