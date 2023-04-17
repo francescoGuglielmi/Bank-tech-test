@@ -8,39 +8,44 @@ The program comprises in a basic bank app that allows to make deposits and width
 
 There is no UI but is possible to call the available functions from a REPL like node.
 
-## Setup
 
-**Packages Used**
+## Setup and Commands
+
+**Packages Used:**
 
 - node.js 
 - jest.js
 
-**Commands**
+**Run these commands inside the project directory:**
 
-Run these commands inside the project directory.
-
-- Install nvm: 
+- Install nvm
 
 ```
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 ```
 
-- Install node: 
+- Install node 
 
 ```
 nvm install node
 ```
 
-- Enable node inside the directory:
+- Enable node inside the directory
 
 ```
 nvm use node
 ```
 
-- Install jest:
+- Install jest
 
 ```
 npm install jest
+```
+
+- You can check the test coverage report by running this command directly in the terminal
+
+```
+npx jest --coverage --watchAll=false
 ```
 
 
