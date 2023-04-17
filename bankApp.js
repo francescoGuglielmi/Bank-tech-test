@@ -10,15 +10,29 @@ const account = {
 function withdraw(amount) {
   dataValidate(amount);
   withdrawValidate(amount);
-  account.currentBalance -= amount;
+  processWithdrawal(amount)
   return `Withdrawn £${amount}, current balance: £${account.currentBalance}`;
 };
 
+function processWithdrawal(amount) {
+  const date = new Date();
+  account.currentBalance -= amount;
+  account.debit.push(amount);
+  account.dateDebited.push(date.toLocaleDateString()) // the date gets formatted into a string
+}
+
 function deposit(amount) {
   dataValidate(amount);
-  account.currentBalance += amount;
+  processDeposit(amount)
   return `Deposited £${amount}, current balance: £${account.currentBalance}`;
 };
+
+function processDeposit(amount) {
+  const date = new Date();
+  account.currentBalance += amount;
+  account.credit.push(amount);
+  account.dateCredited.push(date.toLocaleDateString()) // the date gets formatted into a string
+}
 
 function statement() {
 
