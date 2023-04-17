@@ -11,11 +11,13 @@ function withdraw(amount) {
   dataValidate(amount);
   withdrawValidate(amount);
   account.currentBalance -= amount;
-  return `Withdrawn £${amount}, current balance: £${account.currentBalance}`
+  return `Withdrawn £${amount}, current balance: £${account.currentBalance}`;
 };
 
 function deposit(amount) {
-
+  dataValidate(amount);
+  account.currentBalance += amount;
+  return `Deposited £${amount}, current balance: £${account.currentBalance}`;
 };
 
 function statement() {
@@ -37,6 +39,7 @@ function withdrawValidate(amount) {
 };
 
 module.exports = {
+  account,
   withdraw,
   deposit,
   statement,
