@@ -4,7 +4,8 @@ describe('App', () => {
 
   beforeEach(() => {
     App.account.currentBalance = 1000;
-  }) 
+    App.account.transactions = [];
+  }); 
 
   describe('dataValidate', () => {                        
 
@@ -47,13 +48,11 @@ describe('App', () => {
   describe('deposit', () => {
   
     test('adds a certain amount to the currentBalance', () => {
-      expect(App.deposit(500)).toBe('Deposited £500, current balance: £1500')
+      expect(App.deposit(500)).toBe('Deposited £500, current balance: £1500');
     });
 
   });
-  
-  
 
-})
+});
 
 

@@ -1,42 +1,46 @@
 const account = {
   accountId: 1,
   currentBalance: 1000,
-  dateCredited: [],
-  dateDebited: [],
-  credit: [],
-  debit: []
+  transactions: []
 };
+
+// WITHDRAW
 
 function withdraw(amount) {
   dataValidate(amount);
   withdrawValidate(amount);
-  processWithdrawal(amount)
+  processWithdrawal(amount);
   return `Withdrawn £${amount}, current balance: £${account.currentBalance}`;
 };
 
 function processWithdrawal(amount) {
-  const date = new Date();
   account.currentBalance -= amount;
-  account.debit.push(amount);
-  account.dateDebited.push(date.toLocaleDateString()) // the date gets formatted into a string
-}
+  account.transactions.push({
+    type: 'debit',
+    amount: amount,
+    date: new Date()
+  });
+};
+
+// DEPOSIT
 
 function deposit(amount) {
   dataValidate(amount);
-  processDeposit(amount)
+  processDeposit(amount);
   return `Deposited £${amount}, current balance: £${account.currentBalance}`;
 };
 
 function processDeposit(amount) {
   const date = new Date();
   account.currentBalance += amount;
-  account.credit.push(amount);
-  account.dateCredited.push(date.toLocaleDateString()) // the date gets formatted into a string
-}
-
-function statement() {
-
+  account.transactions.push({
+    type: 'credit',
+    amount: amount,
+    date: date.toLocaleDateString()
+  });
 };
+
+// DATA VALIDATION
 
 function dataValidate(amount) {
   if (!(typeof amount === 'number')) {
@@ -50,6 +54,12 @@ function withdrawValidate(amount) {
   if (amount > account.currentBalance) {
     throw 'You do not have enough funds in your account.';
   }
+};
+
+// DISPLAY STATEMENT
+
+function statement() {
+ 
 };
 
 module.exports = {
