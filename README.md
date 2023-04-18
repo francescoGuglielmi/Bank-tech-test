@@ -8,7 +8,7 @@ As per my approach, I tried to rely exclusively on functions rather than classes
 
 This is a demo of the expected output from the app.
 
-<img src="https://github.com/francescoGuglielmi/Bank-tech-test/blob/main/public/app_in_use.png" width="500" height="300">
+<img src="https://github.com/francescoGuglielmi/Bank-tech-test/blob/main/public/app_in_use.png" width="500" >
 
 ## Test coverage at last commit
 
