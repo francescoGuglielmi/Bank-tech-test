@@ -2,7 +2,7 @@
 
 This is a test to outline the ability to write high quality code.
 
-The program comprises in a basic bank app that allows to make deposits and widthdrawals from some user acounts. 
+The program comprises in a basic bank app that allows to make deposits and widthdrawals from a user account. 
 
 ## Usage
 

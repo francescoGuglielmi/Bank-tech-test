@@ -34,13 +34,19 @@ describe('App', () => {
   });
   
   describe('withdraw', () => {
-
-    test('it withdraws a certain amount from the currentBalance', () => {
-      expect(App.withdraw(600)).toBe('Withdrawn £600, current balance: £400');
-    });
   
     test('it withdraws a certain amount from the currentBalance', () => {
       expect(App.withdraw(1000)).toBe('Withdrawn £1000, current balance: £0');
+    });
+
+    // With this test we are testing indirectly the function processWithdrawal 
+
+    test('it withdraws a certain amount from the currentBalance and verifies it', () => {
+      expect(App.withdraw(600)).toBe('Withdrawn £600, current balance: £400');
+      expect(App.withdraw(100)).toBe('Withdrawn £100, current balance: £300');
+      expect(App.account.transactions[0]).toEqual({ type: 'debit', amount: 600, date: new Date().toLocaleDateString(), balance: 400 });
+      expect(App.account.transactions[1]).toEqual({ type: 'debit', amount: 100, date: new Date().toLocaleDateString(), balance: 300 });
+      expect(App.account.currentBalance).toEqual(300);
     });
 
   });
@@ -49,6 +55,16 @@ describe('App', () => {
   
     test('adds a certain amount to the currentBalance', () => {
       expect(App.deposit(500)).toBe('Deposited £500, current balance: £1500');
+    });
+
+    // With this test we are testing indirectly the function processDeposit
+
+    test('adds a certain amount to the currentBalance and verifies it', () => {
+      expect(App.deposit(500)).toBe('Deposited £500, current balance: £1500');
+      expect(App.deposit(200)).toBe('Deposited £200, current balance: £1700');
+      expect(App.account.transactions[0]).toEqual({ type: 'credit', amount: 500, date: new Date().toLocaleDateString(), balance: 1500 });
+      expect(App.account.transactions[1]).toEqual({ type: 'credit', amount: 200, date: new Date().toLocaleDateString(), balance: 1700 });
+      expect(App.account.currentBalance).toEqual(1700);
     });
 
   });
