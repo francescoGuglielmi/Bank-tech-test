@@ -73,11 +73,13 @@ function statement() {
   return grid
 }
 
-deposit(1000)
-withdraw(200)
-deposit(50)
-withdraw(150)
-console.log(statement())
+// Uncomment to see a preview of a random bank statement
+
+// deposit(1000)
+// withdraw(200)
+// deposit(50)
+// withdraw(150)
+// console.log(statement())
 
 
 module.exports = {
