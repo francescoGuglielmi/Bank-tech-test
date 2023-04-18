@@ -10,7 +10,7 @@ function withdraw(amount) {
   withdrawValidate(amount);
   processWithdrawal(amount);
   return `Withdrawn £${amount}, current balance: £${account.currentBalance}`;
-};
+}
 
 function processWithdrawal(amount) {
   account.currentBalance -= amount;
@@ -20,7 +20,7 @@ function processWithdrawal(amount) {
     date: new Date().toLocaleDateString(),
     balance: account.currentBalance
   });
-};
+}
 
 // DEPOSIT
 
@@ -28,7 +28,7 @@ function deposit(amount) {
   dataValidate(amount);
   processDeposit(amount);
   return `Deposited £${amount}, current balance: £${account.currentBalance}`;
-};
+}
 
 function processDeposit(amount) {
   account.currentBalance += amount;
@@ -38,7 +38,7 @@ function processDeposit(amount) {
     date: new Date().toLocaleDateString(),
     balance: account.currentBalance
   });
-};
+}
 
 // DATA VALIDATION
 
@@ -48,13 +48,13 @@ function dataValidate(amount) {
   } else if (amount <= 0) {
     throw 'The input must be positive';
   }
-};
+}
 
 function withdrawValidate(amount) {
   if (amount > account.currentBalance) {
     throw 'You do not have enough funds in your account.';
   }
-};
+}
 
 // DISPLAY STATEMENT
 
@@ -69,9 +69,9 @@ function statement() {
             sortedTransactions[i].type + ' ||  £' +
             sortedTransactions[i].amount + ' ||  £' +
             sortedTransactions[i].balance + '\n'
-  };
+  }
   return grid
-};
+}
 
 deposit(1000)
 withdraw(200)
