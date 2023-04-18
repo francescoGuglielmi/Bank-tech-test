@@ -16,6 +16,7 @@ module.exports = {
         "expect": true,
         "describe": true,
         "test": true,
-        "beforeEach": true
+        "beforeEach": true,
+        "seeStatement": true
     }
 }
