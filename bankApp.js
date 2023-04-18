@@ -58,9 +58,6 @@ function withdrawValidate(amount) {
 
 // DISPLAY STATEMENT
 
-// This is not the format required but I decided to adopt this solution
-// to improve readability both in the code and on the console
-
 function statement() {
   let grid = 'Date       || Type || Amount || Balance\n';
   let sortedTransactions = account.transactions.reverse()

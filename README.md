@@ -59,7 +59,7 @@ npx jest --coverage --watchAll=false
 
 **There is no UI but is possible to call the available functions from a REPL like node.**
 
- Uncomment from line 87 to 91 and run the following command in the project directory to see a default output:
+ Uncomment from line 84 to 88 and run the following command in the project directory to see a default output:
 
  ```
  node bankApp.js 
