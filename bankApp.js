@@ -1,5 +1,5 @@
 const account = {
-  currentBalance: 0,
+  currentBalance: 0.00,
   transactions: []
 };
 
