@@ -4,7 +4,7 @@ This is a test to outline the ability to write high quality code.
 
 The program comprises in a basic bank app that allows to make deposits and widthdrawals from a user account. 
 
-As per my approach, I tried to rely exclusively on functions rather than classes to try to keep it simple and to test my ability of using an alternative approach to the one that seems the most conventional in this case.
+As per my approach, I tried to rely exclusively on functions rather than classes to try to keep it simple and to test my ability of using an alternative approach to the one that seems the most conventional in this case. The data is stored in a simple object called 'account', is therefore not possible to create multiple accounts. Instead, you can re-run the program to reset your account.
 
 This is a demo of the expected output from the app.
 
@@ -53,13 +53,9 @@ npm install jest
 npx jest --coverage --watchAll=false
 ```
 
-## Usage
+## Test it!
 
-There is no UI but is possible to call the available functions from a REPL like node.
-
- <img src="https://github.com/francescoGuglielmi/Bank-tech-test/blob/main/public/diagram.png" width="400" height="400" alt="preview of the application"> 
-
- **Test it!**
+**There is no UI but is possible to call the available functions from a REPL like node.**
 
  Uncomment from line 87 to 91 and run the following command in the project directory to see a default output:
 
