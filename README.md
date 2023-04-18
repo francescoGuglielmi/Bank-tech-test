@@ -10,6 +10,8 @@ This is a demo of the expected output from the app.
 
 <img src="https://github.com/francescoGuglielmi/Bank-tech-test/blob/main/public/app_in_use.png" width="500" >
 
+This is not exactly the output that was required but I decided to adopt this solution to improve readability both in the code and on the console.
+
 ## Test coverage at last commit
 
  ![Test coverage](https://github.com/francescoGuglielmi/Bank-tech-test/blob/main/public/test_coverage.png)
