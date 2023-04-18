@@ -8,6 +8,11 @@ The program comprises in a basic bank app that allows to make deposits and width
 
 There is no UI but is possible to call the available functions from a REPL like node.
 
+ ![Diagram for bankApp](https://github.com/francescoGuglielmi/Bank-tech-test/blob/main/public/diagram.png)
+
+ ## Test coverage at last commit
+
+ ![Test coverage](https://github.com/francescoGuglielmi/Bank-tech-test/blob/main/public/test_coverage.png)
 
 ## Setup and Commands
 

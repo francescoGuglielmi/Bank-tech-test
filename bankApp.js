@@ -1,6 +1,5 @@
 const account = {
-  accountId: 1,
-  currentBalance: 1000,
+  currentBalance: 0,
   transactions: []
 };
 
@@ -18,7 +17,8 @@ function processWithdrawal(amount) {
   account.transactions.push({
     type: 'debit',
     amount: amount,
-    date: new Date()
+    date: new Date().toLocaleDateString(),
+    balance: account.currentBalance
   });
 };
 
@@ -31,12 +31,12 @@ function deposit(amount) {
 };
 
 function processDeposit(amount) {
-  const date = new Date();
   account.currentBalance += amount;
   account.transactions.push({
     type: 'credit',
     amount: amount,
-    date: date.toLocaleDateString()
+    date: new Date().toLocaleDateString(),
+    balance: account.currentBalance
   });
 };
 
@@ -59,7 +59,15 @@ function withdrawValidate(amount) {
 // DISPLAY STATEMENT
 
 function statement() {
- 
+  let grid = 'Date       || Type || Amount || Balance\n';
+  let sortedTransactions = account.transactions.reverse()
+  for (let i = 0; i < account.transactions.length; i++) {
+    grid += sortedTransactions[i].date + ' || ' +
+            sortedTransactions[i].type + ' ||  £' +
+            sortedTransactions[i].amount + ' ||  £' +
+            sortedTransactions[i].balance + '\n'
+  };
+  return grid
 };
 
 module.exports = {
